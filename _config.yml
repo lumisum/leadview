@@ -1,0 +1,7 @@
+title: 前沿观 · 科技动态
+description: 前沿科技动态与深挖报告：只梳理可核实的事实与逻辑链，公司宣称与第三方验证分开标注。
+url: "https://lumisum.github.io"
+baseurl: "/leadview"
+markdown: kramdown
+kramdown:
+  input: GFM
