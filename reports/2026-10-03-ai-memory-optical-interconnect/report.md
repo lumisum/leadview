@@ -1,8 +1,10 @@
 ---
-layout: default
+layout: report
 title: 用光互连替代电线连接 AI 芯片与内存芯片 — 深度研究
 date: 2026-10-03
 permalink: /reports/2026-10-03-ai-memory-optical-interconnect/
+cover: /assets/images/optical-cover.svg
+summary: Volantis 融资 8800 万美元背后的光互连赛道深挖：技术路线、220 vs 8 口径陷阱、十一家玩家成熟度、光电量化对比与上市公司事实影响链。
 ---
 
 # 用光互连替代电线连接 AI 芯片与内存芯片 — 深度研究

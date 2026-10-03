@@ -6,14 +6,16 @@ https://lumisum.github.io/leadview/
 ## 结构（参考 wulai 仓库的做法）
 
 - `_config.yml`：站点配置（title / baseurl / 描述）
-- `_layouts/default.html`：全站唯一布局（内联样式，无外部依赖）
-- `index.md`：首页，手工维护报告卡片列表（发新报告时加一张卡片）
-- `reports/<日期-拼音slug>/report.md`：每篇报告一个目录，front matter 必备 layout / title / date / permalink
+- `_layouts/default.html`：全站布局（毛玻璃页眉＋页脚）；`_layouts/report.html`：报告页（标题区＋封面＋正文版式）
+- `assets/css/site.css`：全站样式（版式语法参考 wulai 仓库，深色科技配色）
+- `assets/images/`：封面图（SVG 文本格式，可直接入库）
+- `index.html`：首页（Hero＋报告卡片＋标注约定），发新报告时加一张卡片
+- `reports/<日期-拼音slug>/report.md`：每篇报告一个目录，front matter 必备 layout: report / title / date / permalink / cover / summary
 
 ## 发布流程
 
 1. 新报告写入 `reports/<日期-slug>/report.md`，permalink 设为 `/reports/<日期-slug>/`
-2. 在 `index.md` 顶部加一张报告卡片
+2. 在 `index.html` 的报告区顶部加一张报告卡片，封面图放 `assets/images/`
 3. 在本文件下方时间线加一行
 4. 一次提交推送到 main 分支，Pages 自动构建
 

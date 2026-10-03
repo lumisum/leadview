@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="光互连示意：中央 GPU 与周围内存芯粒由发光的光波导连接">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1120"/>
+      <stop offset=".55" stop-color="#081020"/>
+      <stop offset="1" stop-color="#0d1531"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="die" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14264a"/>
+      <stop offset="1" stop-color="#0c1834"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0v44" fill="none" stroke="rgba(126,156,255,.07)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <ellipse cx="600" cy="315" rx="430" ry="215" fill="rgba(56,130,246,.08)"/>
+
+  <!-- optical waveguide beams -->
+  <g fill="none" stroke="url(#beam)" stroke-width="3" filter="url(#glow)" opacity=".95">
+    <path d="M600 315 C 480 300, 380 250, 268 208"/>
+    <path d="M600 315 C 470 330, 370 360, 262 402"/>
+    <path d="M600 315 C 560 220, 520 140, 452 84"/>
+    <path d="M600 315 C 660 210, 700 130, 762 80"/>
+    <path d="M600 315 C 730 300, 830 255, 936 214"/>
+    <path d="M600 315 C 740 335, 845 375, 944 420"/>
+    <path d="M600 315 C 640 420, 600 500, 540 552"/>
+    <path d="M600 315 C 520 425, 470 495, 408 540"/>
+  </g>
+  <g fill="#a5f3fc" filter="url(#glow)">
+    <circle cx="430" cy="278" r="4"/><circle cx="452" cy="348" r="4"/><circle cx="540" cy="180" r="4"/>
+    <circle cx="676" cy="176" r="4"/><circle cx="772" cy="276" r="4"/><circle cx="764" cy="356" r="4"/>
+    <circle cx="618" cy="428" r="4"/><circle cx="512" cy="436" r="4"/>
+  </g>
+
+  <!-- memory chiplets -->
+  <g>
+    <g font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#9fd8ef" text-anchor="middle">
+      <rect x="196" y="176" width="132" height="62" rx="10" fill="#0e1e3d" stroke="#2dd4ee" stroke-opacity=".55"/>
+      <text x="262" y="214">HBM</text>
+      <rect x="190" y="372" width="132" height="62" rx="10" fill="#0e1e3d" stroke="#2dd4ee" stroke-opacity=".55"/>
+      <text x="256" y="410">HBM</text>
+      <rect x="386" y="52" width="132" height="62" rx="10" fill="#0e1e3d" stroke="#2dd4ee" stroke-opacity=".55"/>
+      <text x="452" y="90">HBM</text>
+      <rect x="696" y="48" width="132" height="62" rx="10" fill="#0e1e3d" stroke="#818cf8" stroke-opacity=".6"/>
+      <text x="762" y="86">MEM</text>
+      <rect x="876" y="182" width="132" height="62" rx="10" fill="#0e1e3d" stroke="#818cf8" stroke-opacity=".6"/>
+      <text x="942" y="220">MEM</text>
+      <rect x="884" y="388" width="132" height="62" rx="10" fill="#0e1e3d" stroke="#818cf8" stroke-opacity=".6"/>
+      <text x="950" y="426">MEM</text>
+      <rect x="474" y="520" width="132" height="62" rx="10" fill="#0e1e3d" stroke="#2dd4ee" stroke-opacity=".55"/>
+      <text x="540" y="558">HBM</text>
+      <rect x="342" y="508" width="132" height="62" rx="10" fill="#0e1e3d" stroke="#2dd4ee" stroke-opacity=".4"/>
+      <text x="408" y="546">···</text>
+    </g>
+  </g>
+
+  <!-- central GPU die -->
+  <g>
+    <rect x="512" y="228" width="176" height="176" rx="18" fill="url(#die)" stroke="#38bdf8" stroke-opacity=".8" stroke-width="2"/>
+    <rect x="544" y="260" width="112" height="112" rx="10" fill="none" stroke="rgba(125,211,252,.5)" stroke-width="1.5"/>
+    <rect x="568" y="284" width="64" height="64" rx="7" fill="rgba(34,211,238,.16)" stroke="rgba(34,211,238,.65)"/>
+    <g stroke="rgba(125,211,252,.55)" stroke-width="3">
+      <path d="M530 246 v-16 M560 246 v-16 M590 246 v-16 M620 246 v-16 M650 246 v-16"/>
+      <path d="M530 402 v16 M560 402 v16 M590 402 v16 M620 402 v16 M650 402 v16"/>
+      <path d="M494 264 h16 M494 294 h16 M494 324 h16 M494 354 h16"/>
+      <path d="M690 264 h16 M690 294 h16 M690 324 h16 M690 354 h16"/>
+    </g>
+    <text x="600" y="452" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="19" letter-spacing="6" fill="#dbeafe">GPU</text>
+  </g>
+
+  <text x="48" y="586" font-family="ui-monospace, Menlo, monospace" font-size="16" letter-spacing="5" fill="rgba(147,197,253,.75)">OPTICAL INTERCONNECT · AI × MEMORY</text>
+  <text x="1152" y="586" text-anchor="end" font-family="ui-monospace, Menlo, monospace" font-size="16" letter-spacing="3" fill="rgba(167,139,250,.8)">LEADVIEW</text>
+</svg>
