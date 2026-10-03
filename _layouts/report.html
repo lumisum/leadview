@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="wrap">
+<div class="article-hero">
+<span class="eyebrow">深挖报告 · Deep Dive</span>
+<h1>{{ page.title}}</h1>
+<div class="article-meta">
+{% if page.date %}<span class="badge">{{ page.date | date: "%Y-%m-%d"}}</span>{% endif %}
+<span class="badge">//分开标注</span>
+<span class="badge">不构成投资建议</span>
+</div>
+{% if page.cover %}
+<div class="article-cover"><img src="{{ page.cover | relative_url}}" alt="{{ page.title}}"></div>
+{% endif %}
+</div>
+<div class="article-body">
+{{ content}}
+</div>
+<div class="back-row">
+<a class="btn" href="{{ '/' | relative_url}}">← 返回报告列表</a>
+</div>
+</div>
